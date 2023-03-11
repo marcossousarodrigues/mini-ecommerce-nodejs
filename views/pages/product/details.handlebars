@@ -1,0 +1,21 @@
+<section class="section_details_product">
+    {{#if product }}
+    
+    <h2> <strong>Detalhes do Produto:</strong> {{product.name}}</h2>
+    <div class="details_product">
+        <div class="details_img">
+            <img src="{{product.image}}" alt="{{product.image}}">
+        </div>
+        <div class="details_items">
+            <p>Produto: {{product.name}}</p>
+            <p>Preço: {{product.price}}</p>
+            <p>Descrição: {{product.description}}</p>
+            <div class="details_btn">
+                <a href="">Comprar</a>
+                <a href="">Adicionar ao carrinho</a>
+            </div>
+        </div>
+
+    </div>
+    {{/if}}
+</section>

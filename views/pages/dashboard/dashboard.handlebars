@@ -1,0 +1,18 @@
+<section>
+    <div class="dashboard-container">
+        <h1>Meus Produtos</h1>
+        
+        {{#each products}}
+                <div class="dashboard-item">
+                    <h3>{{this.name}}</h3>
+                    <div class="btn-itesm-dashboard">
+                        <a href="/product/edit/{{this._id}}">Ver</a>
+                        <a href="/product/edit/{{this._id}}">Editar</a>
+                        <a href="/product/delete/{{this._id}}">Deletar</a>
+                    </div>
+            </div>
+        {{/each}}
+
+        <a href="/product/create">Adicionar Produto</a>
+    </div>
+</section>

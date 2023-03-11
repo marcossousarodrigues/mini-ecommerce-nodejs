@@ -1,0 +1,24 @@
+<section class="form_product">
+    
+    <p>{{mensages.message}}</p>
+
+    <h1>Editar Registro</h1>
+    {{#if user}}
+    <form action="/user/edit" method="post">
+        <input type="hidden" name="id" value="{{user._id}}" >
+        <label for="name">Nome</label>
+        <input type="text" name="name" placeholder="Digite seu nome" value="{{user.name}}">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Digite seu e-mail" value="{{user.email}}">
+
+        <label for="description">Senha</label>
+        <input type="password" name="password" placeholder="Digite uma senha" value="{{user.password}}">
+
+        <label for="description">Senha</label>
+        <input type="password" name="confirmpassword" placeholder="Digite a formição de senha" value="{{user.password}}">
+
+        <input type="submit" value="Cadastrar">
+    </form>
+    {{/if}}
+</section>

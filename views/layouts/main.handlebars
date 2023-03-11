@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Style Clothes</a>
+            <form action="" method="get">
+                <input type="text" placeholder="O que você está procurando ?">
+                <input type="submit" value="OK">
+            </form>
+            <ul>
+                {{#if session.userid }}
+                <li class="enter"><a href="/user/dashboard">Dashboard</a></li>
+                <li class="enter"><a href="/user/edit"><ion-icon name="person-circle-outline"></ion-icon></a></li>
+                <li><a href=""><ion-icon name="cart-outline"></ion-icon></a></li>
+                <li class="enter"><a href="/user/logout">Sair</a></li>
+                {{else}}
+                <li class="enter"><a href="/user/login">Entrar</a></li>
+                <li class="enter"><a href="/user/register">Registrar</a></li>
+                <li><a href=""><ion-icon name="cart-outline"></ion-icon></a></li>
+                {{/if}}
+              
+            </ul>    
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/product/1">Masculino</a></li>
+                <li><a href="/product/2">Feminino</a></li>
+                <li><a href="/product/3">Infantil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        {{{body}}}
+    </div>
+
+    <footer>
+        <p> &copy; 2023 Style Clothes</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<section>
+
+    <div class="show_products">
+        {{#if products}}
+         {{#each products}}
+        <a href="/product/details/{{this._id}}" class="items_product">
+            <img src="{{this.image}}" alt="{{this.image}}">
+            <div class="product_footer"> 
+                <span>{{this.name}}</span>
+                <span>{{this.price}} R$</span>
+            </div>
+        </a>
+        {{/each}}
+        {{else}}
+            <h2>Nenhum produto encontrado</h2>
+        {{/if}}
+       
+    </div>
+   
+</section>

@@ -1,0 +1,29 @@
+<section class="form_product">
+    <h1>Editar Product</h1>
+    {{#if product}}
+    <form action="/product/create" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Nome do produto" value="{{product.name}}">
+
+        <label for="description">Descrição</label>
+        <input type="text" name="description" placeholder="Descrição do produto" value="{{product.description}}">
+
+        <label for="price">Preço</label>
+        <input type="text" name="price" placeholder="Preço do produto" value="{{product.price}}">
+        
+        <img src="{{product.image}}" alt="{{product.image}}">
+        <label for="description">Imagem</label>
+        <input type="text" name="image" placeholder="URL da imagem" value="{{product.image}}">
+
+        <label for="description">Destinado</label>
+        <select name="destined">
+            <option value="1" {{#if product.masc }} selected {{/if}}>Masculino</option>
+            <option value="2" {{#if product.femi }} selected {{/if}}>Feminino</option>
+            <option value="3" {{#if product.chil }} selected {{/if}}>Criança</option>
+            <option value="4" {{#if product.othe }} selected {{/if}}>Outros</option>
+        </select>
+
+        <input type="submit" value="Editar">
+    </form>
+    {{/if}}
+</section>

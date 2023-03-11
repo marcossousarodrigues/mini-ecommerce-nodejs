@@ -1,0 +1,26 @@
+<section class="form_product">
+    <h1>Create Product</h1>
+    <form action="/product/create" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Nome do produto">
+
+        <label for="description">Descrição</label>
+        <input type="text" name="description" placeholder="Descrição do produto">
+
+        <label for="price">Preço</label>
+        <input type="text" name="price" placeholder="Preço do produto">
+        
+        <label for="description">Imagem</label>
+        <input type="text" name="image" placeholder="URL da imagem">
+
+        <label for="description">Destinado</label>
+        <select name="destined">
+            <option value="1">Masculino</option>
+            <option value="2">Feminino</option>
+            <option value="3">Criança</option>
+            <option value="4">Outros</option>
+        </select>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+</section>
