@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 li{
     list-style: none;
@@ -17,19 +17,21 @@ a{
 body{
     background-color: #F1F1F1;
 }
-header nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #444;
-    min-height: 100px;
+
+
+header{
+    background: linear-gradient(#222, rgb(0, 40, 143), #222);
 }
+
 header nav{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border-bottom: 1px solid #999;
+    align-items: center;
+    min-height: 100px;
 }
+
+
 header nav form{
     display: inline-flex;
     width: 250px;
@@ -49,9 +51,9 @@ header nav form input[type="submit"]{
     color: #CCC;
 }
 header nav .logo{
-    color: #CCC;
+    color: #FFF;
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 2em;
 }
 
 header nav ul{
@@ -86,9 +88,19 @@ header nav ul li{
     min-height: 60vh;
 }
 
+/* messages */
+.messages{
+    background-color: rgb(255, 203, 106);
+    color: #000;
+    width: 60%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
 /* create product */
 
-.form_product{
+.form_product, .form_user{
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -96,13 +108,17 @@ header nav ul li{
     justify-content: center;
     width: 100%;
 }
-
-.form_product form{
+.form_product h1, .form_user h1{
+    margin-bottom: 50px;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+.form_product form, .form_user form{
     display: flex;
     flex-direction: column;
     width: 50%;
 }
-.form_product form input, .form_product form select{
+.form_product form input, .form_product form select, .form_user form input, .form_user form select{
     height: 40px;
     border: none;
     outline: none;
@@ -112,15 +128,20 @@ header nav ul li{
     margin-bottom: 1em;
 }
 
-.form_product form select{
+.form_product form select, .form_user form select{
     border: 1px solid #999;
 }
 
-.form_product form input[type="submit"]{
+.form_product form input[type="submit"], .form_user form input[type="submit"],
+.form_product form a, .form_user form a{
      width: 100px;
      background-color: blueviolet;
      color: #fff;
      border: none;
+}
+.form_product form a, .form_user form a{
+    padding: 10px;
+    background-color: #000;
 }
 
 /* products */
@@ -129,6 +150,7 @@ header nav ul li{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     flex-wrap: wrap;
     width: 100%;
     margin: 100px auto;
@@ -172,11 +194,22 @@ header nav ul li{
     margin: 50px auto;
 }
 
+.dashboard-container h1{
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.dashboard-container p{
+    font-size: 1.2em;
+}
+
 .dashboard-container a{
     background-color: green;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
-    color: #CCC;
+    color: #F1F1F1;
     margin-top: 1em;
 }
 
@@ -192,8 +225,8 @@ header nav ul li{
 
 .btn-itesm-dashboard a{
     margin-left: 10px;
-    background-color: #222;
-    color: #aaa;
+    background-color: #111;
+    color: #fff;
     padding: 0 10px;
     border-radius: 2px;
 }
@@ -263,9 +296,67 @@ footer{
     justify-content: center;
     align-items: center;
     height: 200px;
-    background-color: #333;
+    background-color: #111;
 }
 
 footer p{
     color: #AAA;
+}
+
+
+
+@media screen and (max-width: 1000px)
+{
+    .items_product{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+    .container{
+        margin: 10px;
+    }
+    header nav{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 180px;
+    }
+
+    .items_product{
+        width: 35%;
+    }
+
+    .details_product{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .dashboard-item{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    .btn-itesm-dashboard{
+        margin: 10px 0;
+    }
+
+    .form_product form, .form_user form{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    .show_products{
+        flex-direction: column;
+    }    
+    .items_product{
+        width: 100%;
+    }
 }

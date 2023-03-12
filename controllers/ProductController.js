@@ -1,4 +1,5 @@
 const Product = require('../models/Product')
+const flash = require('express-flash')
 
 module.exports = 
 class ProductController {
@@ -56,13 +57,14 @@ class ProductController {
 
     static async createProductPost(req, res)
     {
+        const userid = req.body.userid
         const name = req.body.name
         const description = req.body.description
         const price = req.body.price
         const image = req.body.image
         const destined = req.body.destined
 
-        const product = new Product({name, description, price, image, destined})
+        const product = new Product({name, description, price, image, destined, userid})
 
         await product.save()
 
@@ -71,7 +73,20 @@ class ProductController {
         
     }
 
-    
+    static async editProductPost(req, res)
+    {
+        const id = req.body.id
+        const {name, description, price, image, destined} = req.body
+
+        const product = {
+            name, description, price, image, destined
+        }
+
+        await Product.updateOne({_id: id}, product).lean()
+        req.flash('message','Produto e ditado com sucesso')
+        res.redirect('/user/dashboard')
+
+    }
 
     static async deleteProduct(req, res)
     {

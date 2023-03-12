@@ -1,7 +1,10 @@
 <section class="form_product">
     <h1>Editar Product</h1>
     {{#if product}}
-    <form action="/product/create" method="post">
+    <form action="/product/edit" method="post">
+        
+        <input type="hidden" name="id" placeholder="Nome do produto" value="{{product._id}}">
+
         <label for="name">Name</label>
         <input type="text" name="name" placeholder="Nome do produto" value="{{product.name}}">
 
@@ -22,8 +25,11 @@
             <option value="3" {{#if product.chil }} selected {{/if}}>Criança</option>
             <option value="4" {{#if product.othe }} selected {{/if}}>Outros</option>
         </select>
-
-        <input type="submit" value="Editar">
+        <div>
+            <input type="submit" value="Editar">
+            <a href="/user/dashboard">Voltar</a>
+        </div>
+        
     </form>
     {{/if}}
 </section>

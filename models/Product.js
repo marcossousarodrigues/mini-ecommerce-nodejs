@@ -7,7 +7,8 @@ new Schema({
     description: { type: String, required: true },
     price: { type: Number, required: true },
     image: {type: String, required: true },
-    destined: {type: String, required: true }
+    destined: {type: String, required: true },
+    userid: {type: String, required: true }
 }))
 
 module.exports = Product

@@ -1,10 +1,10 @@
 <section>
     <div class="dashboard-container">
         <h1>Meus Produtos</h1>
-        
+        <p>{{message}}</p>
         {{#each products}}
                 <div class="dashboard-item">
-                    <h3>{{this.name}}</h3>
+                    <p>{{this.name}}<p>
                     <div class="btn-itesm-dashboard">
                         <a href="/product/edit/{{this._id}}">Ver</a>
                         <a href="/product/edit/{{this._id}}">Editar</a>

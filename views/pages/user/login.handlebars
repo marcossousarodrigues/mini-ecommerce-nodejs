@@ -1,6 +1,8 @@
 <section class="form_product">
-    <p>{{messages.message}}</p>
     <h1>Registrar</h1>
+     {{#if messages.message}}
+        <div class="messages">{{messages.message}}</div>
+    {{/if}}
     <form action="/user/login" method="post">
       
         <label for="email">Email</label>

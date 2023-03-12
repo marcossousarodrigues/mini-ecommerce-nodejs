@@ -24,6 +24,7 @@ router.get('/', ProductController.showProducts)
 // Rotas Post
 
 router.post('/product/create', ProductController.createProductPost)
+router.post('/product/edit', ProductController.editProductPost)
 router.post('/user/register', UserController.createUser)
 router.post('/user/login', UserController.loginUser)
 router.post('/user/edit', UserController.editUser)
